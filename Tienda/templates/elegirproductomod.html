@@ -1,0 +1,14 @@
+{% extends "principal.html" %}
+{% block title %}ELEGIR PRODUCTO A MODIFICAR{% endblock title %}
+{% block container %}
+<table>
+	<tr>
+		<th>NOMBRE</th>
+	</tr>
+	{% for i in lista %}
+	<tr>
+		<th><a href="/modificarprod/{{i.id}}/">{{i.Nombre}}</a></th>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock container %}
