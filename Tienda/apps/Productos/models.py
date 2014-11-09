@@ -11,4 +11,4 @@ class Pedido(models.Model):
 	Cliente=models.CharField(max_length=100)
 	lista_producto=models.ManyToManyField(Producto,blank=False)
 	Fecha_compra=models.DateField(auto_now=True)
-	Estado=models.BooleanField(default=False)
+	Estado=models.CharField(max_length=100,default="False")
