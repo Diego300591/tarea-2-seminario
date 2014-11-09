@@ -1,0 +1,20 @@
+{% extends "principal.html" %}
+{% block title %}ESCOGER PEDIDO PARA VER{% endblock title %}
+{% block container %}
+<table>
+	<tr>
+		<th>CLIENTE</th>
+		<th>PRODUCTOS</th>
+		<th>FECHA</th>
+		<th>ESTADO</th>
+	</tr>
+	{% for i in lista %}
+	<tr>
+		<th><a href="/detallepedido/{{i.id}}">{{i.Cliente}}</a></th>
+		<th>{% for j in i.lista_producto.all %}<table><tr>{{j.Nombre}}</tr></table>{% endfor %}</th>
+		<th>{{i.Fecha_compra}}</th>
+		<th>{{i.Estado}}</th>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock container %}
