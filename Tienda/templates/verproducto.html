@@ -2,11 +2,14 @@
 {% block title %}
 VER DETALLE DE UN PRODUCTO
 {% endblock title %}
+{% block titulo %}VER DETALLES DEL PRODUCTO {{prod.Nombre}} {% endblock titulo %}
 {% block container %}
-<TABLE>
+<center>
+<TABLE WIDTH="500" BORDER="1">
 	<tr><th>NOMBRE</th><th>{{prod.Nombre}}</th></tr>
 	<tr><th>DESCRIPCION</th><th>{{prod.Descripcion}}</th></tr>
 	<tr><th>PRECIO</th><th>{{prod.Precio}} Bs.</th></tr>
 	<tr><th>STOCK</th><th>{{prod.Stock}} unidades</th></tr>
 </TABLE>
+</center>
 {% endblock container %}

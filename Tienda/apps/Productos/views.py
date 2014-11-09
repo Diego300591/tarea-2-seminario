@@ -11,6 +11,7 @@ def registrar_producto(request):
 		form=fproducto(request.POST)
 		if form.is_valid():
 			form.save()
+			return HttpResponseRedirect("/listaprod/")
 	form=fproducto()
 	return render_to_response("registrarproducto.html",{"form":form},RequestContext(request))
 def listar_productos(request):
@@ -31,6 +32,7 @@ def modificar_producto(request,id):
  		form=fproducto(request.POST,instance=prod)
  		if form.is_valid():
  			form.save()
+ 			return HttpResponseRedirect("/listaprod/")
  	else:
  		form=fproducto(instance=prod)
  	return render_to_response("modificarproducto.html",{"form":form},RequestContext(request))
@@ -39,6 +41,7 @@ def registrar_pedido(request):
 		form=fpedido(request.POST)
 		if form.is_valid():
 			form.save()
+			return HttpResponseRedirect("/listapedido/")
 	form=fpedido()
 	return render_to_response("registrarpedido.html",{"form":form},RequestContext(request))
 def listar_pedidos(request):
@@ -56,4 +59,4 @@ def escoger_pedido_eliminar(request):
 def eliminar_pedido(request,id):
 	aux=Pedido.objects.get(pk=id)
 	borrar=aux.delete()
-	return HttpResponse("Datos borrados")
+	return HttpResponseRedirect("/escogerpedidoeliminar/")

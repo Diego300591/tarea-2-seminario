@@ -1,10 +1,13 @@
 {% extends "principal.html" %}
 {% block title %}DETALLES DEL PEDIDO{% endblock title %}
+{% block titulo %}DETALLE DEL PEDIDO HECHO POR {{pedido.Cliente}} {% endblock titulo %}
 {% block container %}
-<table>
+<center>
+<table width="500" border="1">
 	<tr><th>CLIENTE</th><th>{{pedido.Cliente}}</th></tr>
 	<tr><th>PRODUCTOS</th><th>{% for i in pedido.lista_producto.all %}<table><tr>{{i.Nombre}}</tr>{% endfor %}</table></th></tr>
 	<tr><th>FECHA DE COMPRA</th><th>{{pedido.Fecha_compra}}</th></tr>
 	<tr><th>ESTADO</th><th>{{pedido.Estado}}</th></tr>
 </table>
+</center>
 {% endblock container %}

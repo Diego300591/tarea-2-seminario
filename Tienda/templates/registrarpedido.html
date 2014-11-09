@@ -1,5 +1,6 @@
 {% extends "principal.html" %}
 {% block title %}REGISTRAR PEDIDOS{% endblock title %}
+{% block titulo %}REGISTRAR PEDIDOS{% endblock titulo %}
 {% block container %}
-<form action="" method="POST">{{form.as_ul}} {% csrf_token %}<input type="submit" value="ENVIAR"></form>
+<form action="" method="POST">{{form.as_ul}} {% csrf_token %}<br><input type="submit" value="ENVIAR"></form>
 {% endblock container %}

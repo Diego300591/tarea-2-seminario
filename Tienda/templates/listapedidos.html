@@ -1,7 +1,9 @@
 {% extends "principal.html" %}
 {% block title %}LISTA DE PEDIDOS{% endblock title %}
+{% block titulo %}LISTA DE PEDIDOS HECHOS{% endblock titulo %}
 {% block container %}
-<table>
+<center>
+<table width="1000" border="1">
 	<tr>
 		<th>CLIENTE</th>
 		<th>PRODUCTOS</th>
@@ -17,4 +19,5 @@
 	</tr>
 	{% endfor %}
 </table>
+</center>
 {% endblock container %}
